@@ -17,4 +17,8 @@ public class RemoteControlOne {
 	public void buttonWasPressed() {
 		slot.execute();
 	}
+
+	public void undoButtonWasPressed() {
+		slot.undo();
+	}
 }

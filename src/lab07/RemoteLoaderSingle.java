@@ -25,6 +25,8 @@ public class RemoteLoaderSingle {
 		// 버튼이 하나인 리모컨
 		RemoteControlOne remote = new RemoteControlOne();
 
+		System.out.println("=========== macro test ===========");
+
 		// Macro Command 사용하여 한 번에 여러 커멘드 실행 (다 켜고 열기)
 		Command[] partyOn = { lightOn, fanHigh, showEBS };
 		Command partyOnMacro = new MacroCommand(partyOn);
@@ -41,6 +43,7 @@ public class RemoteLoaderSingle {
 		remote.buttonWasPressed();
 		System.out.println();
 
+		// =========== macro test ===========
 		// 주방 조명이 켜졌습니다.
 		// 부엌 선풍기 속도가 HIGH로 설정되었습니다.
 		// TV 채널이 18번으로 설정되었습니다.
@@ -48,5 +51,37 @@ public class RemoteLoaderSingle {
 		// 주방 조명이 꺼졌습니다.
 		// 부엌 선풍기가 꺼졌습니다.
 		// TV 채널이 10번으로 설정되었습니다.
+
+		System.out.println("=========== undo test ===========");
+
+		// undo 테스트를 위해서 TV 채널을 0으로 리셋
+		tv.setChannel(0);
+		System.out.println();
+
+		System.out.println("> 버튼 누르기");
+		Command[] undoTest = { lightOn, fanHigh, showEBS, showKBS };
+		remote.setCommand(new MacroCommand(undoTest));
+		remote.buttonWasPressed();
+		System.out.println();
+
+		System.out.println("> 되돌아가기");
+		remote.undoButtonWasPressed();
+		System.out.println();
+
+		// =========== undo test ===========
+		// TV 채널이 0번으로 설정되었습니다.
+
+		// > 버튼 누르기
+		// TV 채널이 0번으로 설정되었습니다.
+		// 주방 조명이 켜졌습니다.
+		// 부엌 선풍기 속도가 HIGH로 설정되었습니다.
+		// TV 채널이 18번으로 설정되었습니다.
+		// TV 채널이 10번으로 설정되었습니다.
+
+		// > 되돌아가기
+		// TV 채널이 18번으로 설정되었습니다.
+		// TV 채널이 0번으로 설정되었습니다.
+		// 부엌 선풍기가 꺼졌습니다.
+		// 주방 조명이 꺼졌습니다.
 	}
 }

@@ -7,6 +7,8 @@ public class TVSetChannelCommand implements Command {
 	private Television tv;
 	private int channel;
 
+	private int prevChannel;
+
 	public TVSetChannelCommand(Television tv, int channel) {
 		this.tv = tv;
 		this.channel = channel;
@@ -14,6 +16,12 @@ public class TVSetChannelCommand implements Command {
 
 	@Override
 	public void execute() {
+		prevChannel = tv.getChannel();
 		tv.setChannel(channel);
+	}
+
+	@Override
+	public void undo() {
+		tv.setChannel(prevChannel);
 	}
 }

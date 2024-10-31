@@ -15,6 +15,11 @@ public class LightOffCommand implements Command {
 		light.off();
 	}
 
+	@Override
+	public void undo() {
+		light.on();
+	}
+
 	public static void main(String[] args) {
 		Light light = new Light("거실");
 		Command lightOff = new LightOffCommand(light);

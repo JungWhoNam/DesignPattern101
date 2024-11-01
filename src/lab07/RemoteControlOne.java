@@ -1,4 +1,4 @@
-package lab07.invoker;
+package lab07;
 
 import lab07.command.Command;
 import lab07.command.NoCommand;

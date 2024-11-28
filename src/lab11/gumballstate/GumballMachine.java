@@ -5,6 +5,7 @@ public class GumballMachine {
 	State noQuarterState; // 동전 없음
 	State hasQuarterState; // 동전 있음
 	State soldState; // 알맹이 판매
+	State winnerState;
 
 	State state;
 	int count = 0;
@@ -15,6 +16,7 @@ public class GumballMachine {
 		noQuarterState = new NoQuarterState(this);
 		hasQuarterState = new HasQuarterState(this);
 		soldState = new SoldState(this);
+		winnerState = new WinnerState(this);
 
 		// 시작 상태 설정
 		this.count = numberGumballs;
@@ -25,19 +27,23 @@ public class GumballMachine {
 		}
 	}
 
+	// 동전 넣기
 	public void insertQuarter() {
 		state.insertQuarter();
 	}
 
+	// 동전 빼기
 	public void ejectQuarter() {
 		state.ejectQuarter();
 	}
 
+	// 손잡이 돌림
 	public void turnCrank() {
 		state.turnCrank();
 		state.dispense();
 	}
 
+	// 알맹이 내보내기
 	void releaseBall() {
 		System.out.println("알맹이를 내보내고 있습니다.");
 		if (count > 0) {
@@ -71,5 +77,9 @@ public class GumballMachine {
 
 	public State getSoldState() {
 		return soldState;
+	}
+
+	public State getWinnerState() {
+		return winnerState;
 	}
 }

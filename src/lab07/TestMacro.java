@@ -41,14 +41,5 @@ public class TestMacro {
 		remote.setCommand(partyOffMacro);
 		remote.buttonWasPressed();
 		System.out.println();
-
-		// =========== macro test ===========
-		// 주방 조명이 켜졌습니다.
-		// 부엌 선풍기 속도가 HIGH로 설정되었습니다.
-		// TV 채널이 18번으로 설정되었습니다.
-
-		// 주방 조명이 꺼졌습니다.
-		// 부엌 선풍기가 꺼졌습니다.
-		// TV 채널이 10번으로 설정되었습니다.
 	}
 }

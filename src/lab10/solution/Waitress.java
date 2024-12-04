@@ -19,11 +19,11 @@ public class Waitress {
 		Iterator<MenuItem> iterator1 = dinerMenu.createIterator();
 		Iterator<MenuItem> iterator2 = cafeMenu.createIterator();
 
-		System.out.println("메뉴\n---\n아침 메뉴");
+		System.out.println("메뉴");
 		printMenu(iterator0);
-		System.out.println("\n점심 메뉴");
+		System.out.println("\n메뉴");
 		printMenu(iterator1);
-		System.out.println("\n저녁 메뉴");
+		System.out.println("\n메뉴");
 		printMenu(iterator2);
 	}
 

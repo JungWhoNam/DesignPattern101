@@ -27,10 +27,4 @@ public class DinerMenuIterator implements Iterator<MenuItem> {
 			return true;
 		}
 	}
-
-	@Override
-	public void remove() {
-		// 메뉴 항목은 없애는 것은 잘못된 것이라고 예외 표시
-		throw new UnsupportedOperationException("메뉴 항목은 지우면 안 됩니다.");
-	}
 }

@@ -67,7 +67,7 @@ public class ZooKeeperTestDrive {
 		}
 
 		System.out.println("\n뷁.");
-		
+
 		scanner.close();
 	}
 }

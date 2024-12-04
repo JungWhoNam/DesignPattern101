@@ -1,9 +1,6 @@
 package lab11.starter.gumballstate;
 
-import java.util.Random;
-
 public class HasQuarterState implements State {
-	Random randomWinner = new Random(System.currentTimeMillis());
 	GumballMachine gumballMachine;
 
 	public HasQuarterState(GumballMachine gumballMachine) {

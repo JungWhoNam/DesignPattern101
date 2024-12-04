@@ -1,4 +1,4 @@
-package lab04.solution;
+package lab04.starter;
 
 public class StarbuzzCoffeeSimple {
 	public static void main(String args[]) {
